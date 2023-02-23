@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body class="bg-stone-800">
@@ -12,12 +18,13 @@
         class="pb-4 h-5/6 w-2/6 grid grid-cols-1 justify-items-center rounded-lg bg-indigo-800"
       >
         <div
-          class="text-4xl font-light text-slate-400 place-content-center flex justify-self-center mt-6"
+          class="font-head text-blue-400 font-extralight text-4xl font-light place-content-center flex justify-self-center mt-6"
         >
           Password Generator
         </div>
+
         <div
-          class="h-5/6 grid grid-cols-2 mt-6 place-content-center bg-sky-700 w-11/12 justify-center rounded-lg"
+          class="h-5/6 grid grid-cols-2 mt-6 place-content-center w-11/12 justify-center rounded-lg transition-all duration-500 bg-gradient-to-r from-indigo-700 to-blue-700 bg-size-200 bg-pos-0 hover:bg-pos-100"
         >
           <span
             class="col-span-2 justify-self-center text-2xl text-slate-200 font-extralight"
@@ -35,9 +42,18 @@
           length
         </div>
         <div
-          class="place-content-center flex bg-sky-700 w-11/12 justify-center rounded-lg"
+          class="items-center flex bg-sky-700 w-11/12 justify-center rounded-lg"
         >
-          1-----------------------------16
+          <span id="selectedValue">0</span>
+          <input
+            id="copy-input"
+            type="range"
+            min="0"
+            max="32"
+            value="16"
+            class="w-10/12 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+          />
+          <span>32</span>
         </div>
         <div
           class="font-thin text-sm justify-self-start h-fit self-end ml-6 text-slate-400"
@@ -48,33 +64,90 @@
           class="font-extralight my-2 justify-between items-center px-6 flex text-slate-200 bg-gradient-to-r from-blue-900 to-cyan-900 w-11/12 rounded-lg"
         >
           Include Uppercase
-          <span>o</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              class="sr-only peer hover:bg-blue-600"
+            />
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+          </label>
         </div>
         <div
           class="font-extralight my-2 justify-between items-center px-6 flex text-slate-200 bg-gradient-to-r from-blue-900 to-cyan-900 w-11/12 justify-center rounded-lg"
         >
           Include lowercase
-          <span>o</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              class="sr-only peer hover:bg-blue-600"
+            />
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+          </label>
         </div>
         <div
           class="font-extralight my-2 justify-between items-center px-6 flex text-slate-200 bg-gradient-to-r from-blue-900 to-cyan-900 w-11/12 justify-center rounded-lg"
         >
           Include Numbers
-          <span>o</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              class="sr-only peer hover:bg-blue-600"
+            />
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+          </label>
         </div>
         <div
           class="font-extralight my-2 justify-between items-center px-6 flex text-slate-200 bg-gradient-to-r from-blue-900 to-cyan-900 w-11/12 justify-center rounded-lg"
         >
           Include Symbols
-          <span>o</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              class="sr-only peer hover:bg-blue-600"
+            />
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+          </label>
         </div>
         <div
-          class="font-light text-lg my-2 h-5/6 place-content-center grid bg-gradient-to-r from-sky-500 to-indigo-500 shadow-md w-11/12 justify-center rounded-lg"
+          class="font-light text-lg my-2 h-5/6 place-content-center grid shadow-md w-11/12 justify-center rounded-lg cursor-pointer transition-all duration-500 bg-gradient-to-tl from-purple-500 via-indigo-500 to-sky-500 bg-size-200 bg-pos-0 hover:bg-pos-100 hover:text-xl"
         >
           Generate password
         </div>
       </div>
     </main>
+
+    <button class="">Hover me</button>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundSize: {
+              "size-200": "200% 200%",
+            },
+            backgroundPosition: {
+              "pos-0": "0% 0%",
+              "pos-100": "100% 100%",
+            },
+            fontFamily: {
+              head: "'Tilt Warp', cursive",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="index.js"></script>
   </body>
 </html>
