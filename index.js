@@ -61,7 +61,7 @@ function withNumbers() {
     }
 }
 function withSymbols() {
-    for (var n = 0; n <= newPassword.length / 4; n++) {
+    for (var n = 0; n <= SYMBOLS.length / 4; n++) {
         randNum = Math.floor(Math.random() * newPassword.length);
         newPassword = newPassword.replace(newPassword[randNum], SYMBOLS[randNum]);
     }
