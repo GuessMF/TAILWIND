@@ -7,7 +7,7 @@ const UPPER_CASE: any = document.querySelector("#upperCase");
 const WITH_NUMBERS: any = document.querySelector("#numbers");
 const WITH_SYMBOLS: any = document.querySelector("#symbols");
 const LENGHT_VALUE: any = document.querySelector("#length-value");
-
+const COPY_INPUT: any = document.querySelector("#copy-input");
 const PASSWORD_INPUT: any = document.querySelector("#password_input");
 
 let randNum: number;
@@ -93,7 +93,6 @@ PASSWORD_INPUT.addEventListener("click", () => {
   console.log("Copied the text: " + copyText.value);
 });
 
-const COPY_INPUT: any = document.querySelector("#copy-input");
 COPY_INPUT.addEventListener("input", (e: any) => {
   LENGHT_VALUE.textContent = e.target.value;
 });

@@ -7,6 +7,7 @@ var UPPER_CASE = document.querySelector("#upperCase");
 var WITH_NUMBERS = document.querySelector("#numbers");
 var WITH_SYMBOLS = document.querySelector("#symbols");
 var LENGHT_VALUE = document.querySelector("#length-value");
+var COPY_INPUT = document.querySelector("#copy-input");
 var PASSWORD_INPUT = document.querySelector("#password_input");
 var randNum;
 var newPassword = "abcdefghig";
@@ -81,7 +82,6 @@ PASSWORD_INPUT.addEventListener("click", function () {
     navigator.clipboard.writeText(copyText.value);
     console.log("Copied the text: " + copyText.value);
 });
-var COPY_INPUT = document.querySelector("#copy-input");
 COPY_INPUT.addEventListener("input", function (e) {
     LENGHT_VALUE.textContent = e.target.value;
 });
