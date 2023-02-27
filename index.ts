@@ -7,6 +7,8 @@ const UPPER_CASE: any = document.querySelector("#upperCase");
 const WITH_NUMBERS: any = document.querySelector("#numbers");
 const WITH_SYMBOLS: any = document.querySelector("#symbols");
 
+const PASSWORD_INPUT: any = document.querySelector("#password_input");
+
 let randNum: number;
 let newPassword: string = "abcdefghig";
 let newFF: string = "";
@@ -79,5 +81,13 @@ GEN_BUTTON.addEventListener("click", () => {
   WITH_NUMBERS.checked ? withNumbers() : console.log("no numbers");
   WITH_SYMBOLS.checked ? withSymbols() : console.log("no symbols");
 
-  GENERATED_PASS.textContent = newPassword;
+  GENERATED_PASS.value = newPassword;
+});
+
+PASSWORD_INPUT.addEventListener("click", () => {
+  let copyText: any = document.getElementById("generatedPass");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  console.log("Copied the text: " + copyText.value);
 });
