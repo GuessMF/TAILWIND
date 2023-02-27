@@ -10,12 +10,47 @@
       href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundSize: {
+              "size-200": "200% 200%",
+            },
+            backgroundPosition: {
+              "pos-0": "0% 0%",
+              "pos-100": "100% 100%",
+            },
+            fontFamily: {
+              head: "'Tilt Warp', cursive",
+            },
+          },
+          screens: {
+            "2xl": {max: "1535px"},
+            // => @media (max-width: 1535px) { ... }
+
+            xl: {max: "1279px"},
+            // => @media (max-width: 1279px) { ... }
+
+            lg: {max: "1023px"},
+            // => @media (max-width: 1023px) { ... }
+
+            md: {max: "767px"},
+            // => @media (max-width: 767px) { ... }
+
+            sm: {max: "450px"},
+            // => @media (max-width: 639px) { ... }
+          },
+        },
+      };
+    </script>
     <title>Document</title>
   </head>
   <body class="bg-gradient-to-tl from-blue-700 via-teal-700 to-indigo-700">
     <main class="h-screen w-full flex justify-center items-center">
       <div
-        class="shadow-2xl shadow-teal-700 pb-4 h-5/6 w-2/6 grid grid-cols-1 justify-items-center rounded-xl bg-gradient-to-r from-indigo-800 via-blue-800 to-indigo-800"
+        class="shadow-2xl shadow-teal-700 pb-4 h-5/6 w-2/6 grid grid-cols-1 justify-items-center rounded-xl bg-gradient-to-r from-indigo-800 via-blue-800 to-indigo-800 sm:w-11/12"
       >
         <div
           class="drop-shadow-xl shadow-blue-700/50 font-head text-blue-500 font-extralight text-4xl font-light place-content-center flex justify-self-center mt-6"
@@ -129,25 +164,7 @@
     </main>
 
     <button class="">Hover me</button>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            backgroundSize: {
-              "size-200": "200% 200%",
-            },
-            backgroundPosition: {
-              "pos-0": "0% 0%",
-              "pos-100": "100% 100%",
-            },
-            fontFamily: {
-              head: "'Tilt Warp', cursive",
-            },
-          },
-        },
-      };
-    </script>
+
     <script src="index.js"></script>
   </body>
 </html>
