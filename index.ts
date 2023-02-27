@@ -1,11 +1,12 @@
 const GEN_BUTTON: any = document.querySelector("#genButton");
 const GENERATED_PASS: any = document.querySelector("#generatedPass");
 const PASS_LENGTH: any = document.querySelector("#copy-input");
-const LENGTH_NUM: any = document.querySelector("#selectedValue");
+const LENGTH_NUM: any = document.querySelector("#generatedPass");
 const LOWER_CASE: any = document.querySelector("#lowerCase");
 const UPPER_CASE: any = document.querySelector("#upperCase");
 const WITH_NUMBERS: any = document.querySelector("#numbers");
 const WITH_SYMBOLS: any = document.querySelector("#symbols");
+const LENGHT_VALUE: any = document.querySelector("#length-value");
 
 const PASSWORD_INPUT: any = document.querySelector("#password_input");
 
@@ -44,7 +45,7 @@ const LETTERS: string[] = [
 const SYMBOLS = ["!", "@", "#", "$", "%", "&", "?", "-", "+", "=", "~"];
 
 function toLower() {
-  LENGTH_NUM.textContent = PASS_LENGTH.value;
+  LENGTH_NUM.value = PASS_LENGTH.value;
   for (let i: number = 0; i <= PASS_LENGTH.value - 1; i++) {
     randNum = Math.floor(Math.random() * LETTERS.length);
     newPassword += LETTERS[randNum];
@@ -90,4 +91,9 @@ PASSWORD_INPUT.addEventListener("click", () => {
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
   console.log("Copied the text: " + copyText.value);
+});
+
+const COPY_INPUT: any = document.querySelector("#copy-input");
+COPY_INPUT.addEventListener("input", (e: any) => {
+  LENGHT_VALUE.textContent = e.target.value;
 });

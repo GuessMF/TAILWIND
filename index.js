@@ -1,11 +1,12 @@
 var GEN_BUTTON = document.querySelector("#genButton");
 var GENERATED_PASS = document.querySelector("#generatedPass");
 var PASS_LENGTH = document.querySelector("#copy-input");
-var LENGTH_NUM = document.querySelector("#selectedValue");
+var LENGTH_NUM = document.querySelector("#generatedPass");
 var LOWER_CASE = document.querySelector("#lowerCase");
 var UPPER_CASE = document.querySelector("#upperCase");
 var WITH_NUMBERS = document.querySelector("#numbers");
 var WITH_SYMBOLS = document.querySelector("#symbols");
+var LENGHT_VALUE = document.querySelector("#length-value");
 var PASSWORD_INPUT = document.querySelector("#password_input");
 var randNum;
 var newPassword = "abcdefghig";
@@ -40,7 +41,7 @@ var LETTERS = [
 ];
 var SYMBOLS = ["!", "@", "#", "$", "%", "&", "?", "-", "+", "=", "~"];
 function toLower() {
-    LENGTH_NUM.textContent = PASS_LENGTH.value;
+    LENGTH_NUM.value = PASS_LENGTH.value;
     for (var i = 0; i <= PASS_LENGTH.value - 1; i++) {
         randNum = Math.floor(Math.random() * LETTERS.length);
         newPassword += LETTERS[randNum];
@@ -79,4 +80,8 @@ PASSWORD_INPUT.addEventListener("click", function () {
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
     console.log("Copied the text: " + copyText.value);
+});
+var COPY_INPUT = document.querySelector("#copy-input");
+COPY_INPUT.addEventListener("input", function (e) {
+    LENGHT_VALUE.textContent = e.target.value;
 });
