@@ -71,5 +71,4 @@ GEN_BUTTON.addEventListener("click", function () {
     WITH_NUMBERS.checked ? withNumbers() : console.log("no numbers");
     WITH_SYMBOLS.checked ? withSymbols() : console.log("no symbols");
     GENERATED_PASS.textContent = newPassword;
-    console.log("eeded");
 });

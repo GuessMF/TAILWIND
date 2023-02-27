@@ -80,5 +80,4 @@ GEN_BUTTON.addEventListener("click", () => {
   WITH_SYMBOLS.checked ? withSymbols() : console.log("no symbols");
 
   GENERATED_PASS.textContent = newPassword;
-  console.log("eeded");
 });
