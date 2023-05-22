@@ -63,14 +63,14 @@ function toUpper() {
 }
 function withNumbers() {
   for (let n: number = 0; n <= newPassword.length / 4; n++) {
-    randNum = Math.floor(Math.random() * newPassword.length);
+    randNum = Math.floor(Math.random() * 10);
     let nummmm: string = String(randNum);
     newPassword = newPassword.replace(newPassword[randNum], nummmm);
   }
 }
 function withSymbols() {
-  for (let n: number = 0; n <= SYMBOLS.length / 4; n++) {
-    randNum = Math.floor(Math.random() * newPassword.length);
+  for (let n: number = 0; n <= newPassword.length / 4; n++) {
+    randNum = Math.floor(Math.random() * 11);
     newPassword = newPassword.replace(newPassword[randNum], SYMBOLS[randNum]);
   }
 }
@@ -78,10 +78,9 @@ function withSymbols() {
 GEN_BUTTON.addEventListener("click", () => {
   newPassword = "";
   toLower();
-  UPPER_CASE.checked ? toUpper() : console.log("no upper");
-  WITH_NUMBERS.checked ? withNumbers() : console.log("no numbers");
-  WITH_SYMBOLS.checked ? withSymbols() : console.log("no symbols");
-
+  UPPER_CASE.checked ? toUpper() : null;
+  WITH_NUMBERS.checked ? withNumbers() : null;
+  WITH_SYMBOLS.checked ? withSymbols() : null;
   GENERATED_PASS.value = newPassword;
 });
 
@@ -90,7 +89,6 @@ PASSWORD_INPUT.addEventListener("click", () => {
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
-  console.log("Copied the text: " + copyText.value);
 });
 
 COPY_INPUT.addEventListener("input", (e: any) => {

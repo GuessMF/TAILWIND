@@ -48,28 +48,30 @@
     <title>Document</title>
   </head>
   <body class="bg-gradient-to-tl from-blue-700 via-teal-700 to-indigo-700">
-    <main class="h-screen w-full flex justify-center items-center">
+    <main
+      class="h-screen w-full max-w-6xl max-h-max m-auto flex justify-center items-center"
+    >
       <div
-        class="shadow-2xl shadow-teal-700 pb-4 h-5/6 w-2/6 grid grid-cols-1 justify-items-center rounded-xl bg-gradient-to-r from-indigo-800 via-blue-800 to-indigo-800 sm:w-11/12"
+        class="shadow-2xl shadow-teal-700 pb-4 h-5/6 w-2/6 grid grid-cols-1 justify-items-center rounded-xl bg-gradient-to-r from-indigo-800 via-blue-800 to-indigo-800 sm:w-11/12 md:w-10/12 lg:w-6/12 xl:w-6/12 2xl:w-2/5"
       >
         <div
-          class="drop-shadow-xl shadow-blue-700/50 font-head text-blue-500 font-extralight text-4xl font-light place-content-center flex justify-self-center mt-6"
+          class="drop-shadow-xl text-center shadow-blue-700/50 font-head text-blue-500 font-extralight text-4xl font-light place-content-center flex justify-self-center mt-6"
         >
           Password Generator
         </div>
 
         <div
           id="password_input"
-          class="group h-5/6 grid grid-cols-2 mt-6 place-content-center w-11/12 justify-center rounded-lg transition-all duration-500 bg-gradient-to-r from-indigo-700 to-blue-700 bg-size-200 bg-pos-0 hover:bg-pos-100"
+          class="group h-5/6 grid grid-cols-1 mt-6 place-content-center w-11/12 justify-center rounded-lg transition-all duration-500 bg-gradient-to-r from-indigo-700 to-blue-700 bg-size-200 bg-pos-0 hover:bg-pos-100"
         >
           <span
-            class="col-span-2 justify-self-center text-2xl text-slate-200 font-extralight"
+            class="w-full justify-self-center text-2xl text-slate-200 font-extralight"
           >
             <!-- <p id='generatedPass'class="text-slate-300">Your password will be here</p> -->
             <input
               type="text"
               id="generatedPass"
-              class="w-max text-center bg-gradient-to-r from-indigo-700 to-blue-700 bg-size-200 bg-pos-0 group-hover:bg-pos-100 transition-all duration-500 outline-none outline-offset-0 cursor-pointer"
+              class="w-full text-center bg-gradient-to-r from-indigo-700 to-blue-700 bg-size-200 bg-pos-0 group-hover:bg-pos-100 transition-all duration-500 outline-none outline-offset-0 cursor-pointer"
               value=""
               readonly
               placeholder="Your password will be here"
@@ -82,7 +84,7 @@
         <div
           class="font-thin text-sm justify-self-start h-fit self-end ml-6 text-slate-400"
         >
-          length: <span id="length-value">16</span>
+          length: <span id="length-value">10</span>
         </div>
         <div
           class="items-center flex bg-gradient-to-b from-indigo-600 to-indigo-700 w-11/12 justify-center rounded-lg"
@@ -92,11 +94,11 @@
             id="copy-input"
             type="range"
             min="1"
-            max="26"
-            value="13"
+            max="20"
+            value="10"
             class="w-10/12 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
           />
-          <span>26</span>
+          <span>20</span>
         </div>
         <div
           class="font-thin text-sm justify-self-start h-fit self-end ml-6 text-slate-400"
@@ -113,23 +115,6 @@
               value=""
               id="upperCase"
               class="sr-only peer hover:bg-blue-600"
-            />
-            <div
-              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-            ></div>
-          </label>
-        </div>
-        <div
-          class="font-extralight my-2 justify-between items-center px-6 flex text-slate-200 bg-gradient-to-r from-blue-900 to-cyan-900 w-11/12 justify-center rounded-lg"
-        >
-          Include lowercase
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              value=""
-              checked="true"
-              class="sr-only peer hover:bg-blue-600"
-              id="lowerCase"
             />
             <div
               class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white hover:after:bg-blue-600 hover:peer-checked:bg-gray-700 hover:peer-checked:after:bg-blue-600 after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
@@ -169,7 +154,7 @@
           </label>
         </div>
         <div
-          class="font-light text-lg my-2 h-5/6 place-content-center grid shadow-md w-11/12 justify-center rounded-lg cursor-pointer transition-all duration-500 bg-gradient-to-tl from-purple-500 via-indigo-500 to-sky-500 bg-size-200 bg-pos-0 hover:bg-pos-100 hover:text-xl"
+          class="font-light text-lg my-2 h-5/6 place-content-center select-none grid shadow-md w-11/12 justify-center rounded-lg cursor-pointer transition-all duration-500 bg-gradient-to-tl from-purple-500 via-indigo-500 to-sky-500 bg-size-200 bg-pos-0 hover:bg-pos-100 hover:text-xl"
           id="genButton"
         >
           Generate password
